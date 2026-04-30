@@ -12,7 +12,7 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0, 0, -9.81)
 
 # Opcional: Ocultar los paneles laterales de PyBullet para ver mejor
-# p.configureDebugVisualizer(p.COV_ENABLE_GUI, 0)
+p.configureDebugVisualizer(p.COV_ENABLE_GUI, 0)
 
 # Cargar piso y robot
 p.loadURDF("plane.urdf")
@@ -38,7 +38,7 @@ matriz_proyeccion = p.computeProjectionMatrixFOV(fov, aspect, near_val, far_val)
 # Le damos una velocidad inicial al robot para que avance
 ruedas = [0, 1, 2, 3] # Índices de articulaciones según tu URDF
 for r in ruedas:
-    p.setJointMotorControl2(robot_id, r, p.VELOCITY_CONTROL, targetVelocity=4.0, force=50)
+    p.setJointMotorControl2(robot_id, r, p.VELOCITY_CONTROL, targetVelocity=10.0, force=50)
 
 print("\n--- Simulación de Cámara y Profundidad Iniciada ---")
 

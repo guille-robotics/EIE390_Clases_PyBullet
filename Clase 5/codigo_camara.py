@@ -34,7 +34,7 @@ matriz_proyeccion = p.computeProjectionMatrixFOV(fov, aspect, near_val, far_val)
 # Le damos una velocidad inicial baja para que el robot avance lentamente
 ruedas = [0, 1, 2, 3] # Índices de las ruedas según tu URDF
 for r in ruedas:
-    p.setJointMotorControl2(robot_id, r, p.VELOCITY_CONTROL, targetVelocity=2.0, force=50)
+    p.setJointMotorControl2(robot_id, r, p.VELOCITY_CONTROL, targetVelocity=6.0, force=50)
 
 print("\n--- Simulación de Cámara Iniciada ---")
 
